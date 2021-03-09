@@ -1,0 +1,35 @@
+﻿@model PartyTTHK_K.Models.Guest
+
+@{
+    ViewBag.Title = "Thanks";
+}
+
+<div>
+    <br />
+    <h3>
+        Thanks @Model.Name !
+    </h3>
+</div>
+<div>
+    @if (Model.WillAttend == true)
+    {
+        @:<h2>We will wait you, my friend!</h2>
+        <p>
+            <img src="~/Images/uwu.jpg" class="rounded" width="500" height="500" />
+        </p>
+        <br />
+        
+        <div class="special-url-btn">
+            @Html.ActionLink("Mention", "Index", "Index", new { @class = "btn btn-primary" })
+        </div>
+    }
+    else
+    {
+        @:
+        <h2>Uh... And you are bad user! BAD USER!</h2>
+        <p>
+            <img src="~/Images/hm.jpg" class="rounded" width="500" height="500" />
+        </p>
+    }
+    @ViewBag.Message @*ViewBag.Message - отчёт об отправке письма с приглашением *@
+</div>

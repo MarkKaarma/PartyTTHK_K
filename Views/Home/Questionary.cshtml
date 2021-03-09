@@ -1,0 +1,24 @@
+﻿@model PartyTTHK_K.Models.Guest
+
+@{
+    ViewBag.Title = "Questionary";
+}
+
+
+<h2>Questionary</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <p> Type your name: @Html.TextBoxFor(x => x.Name) </p>
+    <p> Type your email: @Html.TextBoxFor(x => x.Email) </p>
+    <p> Type your phonenumber: @Html.TextBoxFor(x => x.Phone) </p>
+    <p>
+        Are you comming? @Html.DropDownListFor(x => x.WillAttend,
+        new[]
+        {
+            new SelectListItem() {Text="Of course!", Value=bool.TrueString },
+            new SelectListItem() {Text="Nope", Value=bool.FalseString }, 
+        }, "Choose")
+    </p>
+    <input type="submit" value="Enter" />
+}

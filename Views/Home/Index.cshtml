@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Welcome! Ha-ha-ha...";
+}
+
+<div class="jumbotron">
+    <h1>@ViewBag.Greeting... Oh my God, HI!</h1>
+    <p class="lead">Today we will try to create first project on MVC</p>
+</div>
+
+<div class="main">
+    <div class="center-1">
+        <h2>Welcome. And you have an invitation to the party!</h2>
+        <h3 style="color:red"> @ViewBag.Message </h3>
+            <img src="~/Images/uvazenie.jpg" />
+        <br />
+        <p>
+            <strong>To receive an invitation to a party. Click on the button to get the party invite.</strong>
+        </p>
+
+        <p><a class="btn btn-default" href="https://youtu.be/dQw4w9WgXcQ">Accept it! </a></p>
+    </div>
+
+    <div class="special-url-btn">
+        @Html.ActionLink("Accept", "Questionary", "Questionary", new { @class = "btn btn-primary" })
+    </div>
+</div>
