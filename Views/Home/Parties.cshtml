@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PartyTTHK_K.Models.Party>
+
+@{
+    ViewBag.Title = "Parties";
+}
+
+<h2>Parties</h2>
+
+<p>
+    @Html.ActionLink("Create new Party", "PartyCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartyDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WillAttend)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartyDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WillAttend)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "PartyEdit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "PartyDelete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

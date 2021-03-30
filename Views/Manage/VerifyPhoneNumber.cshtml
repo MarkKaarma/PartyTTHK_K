@@ -1,6 +1,6 @@
 ﻿@model PartyTTHK_K.Models.VerifyPhoneNumberViewModel
 @{
-    ViewBag.Title = "Проверка номера телефона";
+    ViewBag.Title = "Phone number verification";
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -9,7 +9,9 @@
 {
     @Html.AntiForgeryToken()
     @Html.Hidden("phoneNumber", @Model.PhoneNumber)
-    <h4>Введите проверочный код</h4>
+<h4>
+    Enter verification code
+</h4>
     <h5>@ViewBag.Status</h5>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })

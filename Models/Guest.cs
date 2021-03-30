@@ -9,6 +9,7 @@ namespace PartyTTHK_K.Models
 {
     public class Guest
     {
+        public int Id { get; set; }
         [Required(ErrorMessage = "Your name")] 
         public string Name { get; set; }
         [Required(ErrorMessage = "Your email")]
